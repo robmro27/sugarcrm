@@ -2,6 +2,26 @@
  //WARNING: The contents of this file are auto-generated
 
 
+
+require_once('modules/MagentoImporter/ProductImporter.php');
+require_once('modules/MagentoImporter/ContactImporter.php');
+
+array_push($job_strings, 'MagentoImporter');
+
+
+function MagentoImporter()
+{
+    
+    $productImporter = new ProductImporter();
+    $productImporter->importProductList();
+    
+    $contactsImporter = new ContactImporter();
+    $contactsImporter->importContactList();
+    
+    return true;
+}
+
+
 if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
 /*********************************************************************************
  * SugarCRM Community Edition is a customer relationship management program developed by

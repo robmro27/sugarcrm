@@ -121,6 +121,9 @@ class SugarCronJobs
      */
     public function throttle()
     {
+        
+        return true;
+        
         if($this->min_interval == 0) {
             return true;
         }

@@ -1,43 +1,73 @@
 <?php
 
+include_once 'ImporterAbstract.php';
+
 /**
  * Description of ProductImporter
  *
  * @author rmroz
  */
-class ProductImporter {
+class ProductImporter extends ImporterAbstract {
     
-    const API_URL = 'http://sugarcrm_magento.local/api/V2_soap/?wsdl=1';
-    
-    const USERNAME = 'sugarcrm';
-    const PASSWORD = 'sugarcrm';
+    public function __construct() 
+    {
+        parent::__construct();
+    }
+
+    public function importProduct($magentoProduct)
+    {
+        
+        // TODO: tax rates
+        // TODO: copy files between servers
+        
+        $attributes = new stdClass();
+        $attributes->additional_attributes = array('cost');
+        
+        $magentoProductInfo = $this->soapClient->catalogProductInfo($this->sessionId, $magentoProduct->product_id, null, $attributes);
+        $magentoProductImages = $this->soapClient->catalogProductAttributeMediaList($this->sessionId, $magentoProduct->product_id);
+
+        $productBean = new oqc_Product();
+        $productBean->name = $magentoProductInfo->name;
+        $productBean->date_entered = date('Y-m-d');
+        $productBean->date_modified = date('Y-m-d');
+        $productBean->description = $magentoProductInfo->description;
+        $productBean->status = 'New';
+        $productBean->price = $magentoProductInfo->price;
+        $productBean->cost = $magentoProductInfo->additional_attributes[0]->value;
+        $productBean->active = 1;
+        $productBean->relatedcategory_id = self::CATEGORY_ID;
+        $productBean->unit = 'pieces';
+        $productBean->catalog_id = self::CATALOG_ID;
+        $productBean->supplier_id = self::SUPPLIER_ID;
+        $productBean->image_filename = $magentoProductImages[0]->url;
+        $productBean->image_mime_type = $this->getMimetype($magentoProductImages[0]->file);
+        $productBean->unique_identifier = $magentoProductInfo->sku;
+        $productBean->svnumber = $magentoProductInfo->sku;
+        $productBean->save();
+        
+    }
     
     public function importProductList()
     {
-        
-        $cli = new SoapClient(self::API_URL);
-
-        $session_id = $cli->login(self::USERNAME, self::PASSWORD);
 
         $params = array('complex_filter'=>
             array(array('key'=>'created_at','value'=>array('key' =>'from','value' => $this->getLastSuccessExecution())))
         );
 
-        return $cli->catalogProductList($session_id, $params);
+        $magentoProducts = $this->soapClient->catalogProductList($this->sessionId, $params);
         
+        $productBean = new oqc_Product();
+        foreach ( $magentoProducts as $magentoProduct ) 
+        {
+            // if product already exists continue
+            $sugarProduct = $productBean->retrieve_by_string_fields(array('svnumber' => $magentoProduct->sku ));
+            if ($sugarProduct instanceof oqc_Product) {
+                continue;
+            }
+            
+            $this->importProduct($magentoProduct);
+        }
     }
     
-    
-    public function getLastSuccessExecution()
-    {
-        $db = DBManagerFactory::getInstance();
-
-        $query = 'select * from job_queue jq where jq.name = "Magento Importer" '
-               . 'and jq.`status` = "' . SchedulersJob::JOB_STATUS_DONE . '" and jq.resolution = "' . SchedulersJob::JOB_SUCCESS . '"';
-
-        $result = $db->query($query);
-        $row = $db->fetchByAssoc($result);
-        return ($row['execute_time'] !== null ) ? $row['execute_time'] : date('Y-m-d H:i:s', null) ;
-    }
     
 }
