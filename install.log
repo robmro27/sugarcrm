@@ -1,0 +1,249 @@
+
+2016-05-16 10:06:46...installerHook: Could not find custom/install/install_hooks.php
+2016-05-16 10:09:59...installerHook: Could not find custom/install/install_hooks.php
+2016-05-16 10:10:01...installerHook: Could not find custom/install/install_hooks.php
+2016-05-16 10:10:04...Begin System Check Process *************
+2016-05-16 10:10:04...XML Parsing Support Found
+2016-05-16 10:10:04...MBString Support Found
+2016-05-16 10:10:04...ZIP Support Found
+2016-05-16 10:10:04.../custom directory and subdirectory check passed
+2016-05-16 10:10:04...cache directory and subdirectory check passed
+2016-05-16 10:10:05.../module  directory and subdirectory check passed
+2016-05-16 10:10:05.../upload directory check passed
+2016-05-16 10:10:05.../zip check passed
+2016-05-16 10:10:05...PCRE version check passed
+2016-05-16 10:10:05...installerHook: Could not find custom/install/install_hooks.php
+2016-05-16 10:10:05...php.ini location found. C:\xampp\php\php.ini
+2016-05-16 10:10:05...Outputting HTML for System check
+2016-05-16 10:10:05...No Errors were found *************
+2016-05-16 10:10:08...installerHook: Could not find custom/install/install_hooks.php
+2016-05-16 10:10:11...installerHook: Could not find custom/install/install_hooks.php
+2016-05-16 10:10:12...installerHook: Could not find custom/install/install_hooks.php
+2016-05-16 10:10:20...Begin DB Check Process *************
+2016-05-16 10:10:20...testing with mysql:mysqli
+2016-05-16 10:10:20...Basic form info is valid, continuing Process.
+2016-05-16 10:10:20...Testing user account...
+2016-05-16 10:10:20...Connection made using  host: sugarcrm.local, usr: root
+2016-05-16 10:10:20...Testing priviliged account...
+2016-05-16 10:10:20...Connection made using  host: sugarcrm.local, usr: root
+2016-05-16 10:10:20...ERROR:: The provided Database Name already exists.  You can<br>1.  hit the back button and choose a new database name <br>2.  click next and continue but all existing tables on this database will be dropped.  <strong>This means your tables and data will be blown away.</strong>
+2016-05-16 10:10:20...Passed DB install check
+2016-05-16 10:10:20...WARNING:: no errors detected, but DB tables will be dropped!, issuing warning to user
+2016-05-16 10:10:20...End DB Check Process *************
+2016-05-16 10:10:23...installerHook: Could not find custom/install/install_hooks.php
+2016-05-16 10:10:32...installerHook: Could not find custom/install/install_hooks.php
+2016-05-16 10:10:34...installerHook: Could not find custom/install/install_hooks.php
+2016-05-16 10:10:34...calling handleSugarConfig()
+2016-05-16 10:10:34...calling handleLog4Php()
+2016-05-16 10:10:34...calling handleHtaccess()
+2016-05-16 10:10:34...calling handleDbCharsetCollation()
+2016-05-16 10:10:34...looping through all the Beans and create their tables
+2016-05-16 10:10:34...processing table acl_actions
+2016-05-16 10:10:34...dropping table acl_actions
+2016-05-16 10:10:34...creating table acl_actions
+2016-05-16 10:10:34...creating Relationship Meta for ACLAction
+2016-05-16 10:10:34...processing table acl_roles
+2016-05-16 10:10:34...dropping table acl_roles
+2016-05-16 10:10:34...creating table acl_roles
+2016-05-16 10:10:34...creating Relationship Meta for ACLRole
+2016-05-16 10:10:34...processing table relationships
+2016-05-16 10:10:34...dropping table relationships
+2016-05-16 10:10:34...creating table relationships
+2016-05-16 10:10:34...creating Relationship Meta for Relationship
+2016-05-16 10:10:34...processing table leads
+2016-05-16 10:10:34...dropping table leads
+2016-05-16 10:10:34...creating table leads
+2016-05-16 10:10:34...creating Relationship Meta for Lead
+2016-05-16 10:10:34...processing table cases
+2016-05-16 10:10:34...dropping table cases
+2016-05-16 10:10:34...creating table cases
+2016-05-16 10:10:34...creating Relationship Meta for Case
+2016-05-16 10:10:34...processing table bugs
+2016-05-16 10:10:34...dropping table bugs
+2016-05-16 10:10:34...creating table bugs
+2016-05-16 10:10:34...creating Relationship Meta for Bug
+2016-05-16 10:10:34...processing table users
+2016-05-16 10:10:34...dropping table users
+2016-05-16 10:10:34...creating table users
+2016-05-16 10:10:34...creating Relationship Meta for User
+2016-05-16 10:10:34...processing table campaign_log
+2016-05-16 10:10:34...dropping table campaign_log
+2016-05-16 10:10:34...creating table campaign_log
+2016-05-16 10:10:34...creating Relationship Meta for CampaignLog
+2016-05-16 10:10:34...processing table project
+2016-05-16 10:10:34...dropping table project
+2016-05-16 10:10:34...creating table project
+2016-05-16 10:10:34...creating Relationship Meta for Project
+2016-05-16 10:10:34...processing table project_task
+2016-05-16 10:10:34...dropping table project_task
+2016-05-16 10:10:35...creating table project_task
+2016-05-16 10:10:35...creating Relationship Meta for ProjectTask
+2016-05-16 10:10:35...processing table campaigns
+2016-05-16 10:10:35...dropping table campaigns
+2016-05-16 10:10:35...creating table campaigns
+2016-05-16 10:10:35...creating Relationship Meta for Campaign
+2016-05-16 10:10:35...processing table prospect_lists
+2016-05-16 10:10:35...dropping table prospect_lists
+2016-05-16 10:10:35...creating table prospect_lists
+2016-05-16 10:10:35...creating Relationship Meta for ProspectList
+2016-05-16 10:10:35...processing table prospects
+2016-05-16 10:10:35...dropping table prospects
+2016-05-16 10:10:35...creating table prospects
+2016-05-16 10:10:35...creating Relationship Meta for Prospect
+2016-05-16 10:10:35...processing table email_marketing
+2016-05-16 10:10:35...dropping table email_marketing
+2016-05-16 10:10:35...creating table email_marketing
+2016-05-16 10:10:35...creating Relationship Meta for EmailMarketing
+2016-05-16 10:10:35...processing table campaign_trkrs
+2016-05-16 10:10:35...dropping table campaign_trkrs
+2016-05-16 10:10:35...creating table campaign_trkrs
+2016-05-16 10:10:35...creating Relationship Meta for CampaignTracker
+2016-05-16 10:10:35...processing table releases
+2016-05-16 10:10:35...dropping table releases
+2016-05-16 10:10:35...creating table releases
+2016-05-16 10:10:35...creating Relationship Meta for Release
+2016-05-16 10:10:35...processing table emailman
+2016-05-16 10:10:35...dropping table emailman
+2016-05-16 10:10:35...creating table emailman
+2016-05-16 10:10:35...creating Relationship Meta for EmailMan
+2016-05-16 10:10:35...processing table schedulers
+2016-05-16 10:10:35...dropping table schedulers
+2016-05-16 10:10:35...creating table schedulers
+2016-05-16 10:10:35...creating Relationship Meta for Scheduler
+2016-05-16 10:10:35...processing table job_queue
+2016-05-16 10:10:35...dropping table job_queue
+2016-05-16 10:10:35...creating table job_queue
+2016-05-16 10:10:35...creating Relationship Meta for SchedulersJob
+2016-05-16 10:10:35...processing table contacts
+2016-05-16 10:10:35...dropping table contacts
+2016-05-16 10:10:35...creating table contacts
+2016-05-16 10:10:35...creating Relationship Meta for Contact
+2016-05-16 10:10:35...processing table accounts
+2016-05-16 10:10:35...dropping table accounts
+2016-05-16 10:10:35...creating table accounts
+2016-05-16 10:10:35...creating Relationship Meta for Account
+2016-05-16 10:10:35...processing table opportunities
+2016-05-16 10:10:35...dropping table opportunities
+2016-05-16 10:10:35...creating table opportunities
+2016-05-16 10:10:35...creating Relationship Meta for Opportunity
+2016-05-16 10:10:36...processing table email_templates
+2016-05-16 10:10:36...dropping table email_templates
+2016-05-16 10:10:36...creating table email_templates
+2016-05-16 10:10:36...creating Relationship Meta for EmailTemplate
+2016-05-16 10:10:36...processing table notes
+2016-05-16 10:10:36...dropping table notes
+2016-05-16 10:10:36...creating table notes
+2016-05-16 10:10:36...creating Relationship Meta for Note
+2016-05-16 10:10:36...processing table calls
+2016-05-16 10:10:36...dropping table calls
+2016-05-16 10:10:36...creating table calls
+2016-05-16 10:10:36...creating Relationship Meta for Call
+2016-05-16 10:10:36...processing table emails
+2016-05-16 10:10:36...dropping table emails
+2016-05-16 10:10:36...creating table emails
+2016-05-16 10:10:36...creating Relationship Meta for Email
+2016-05-16 10:10:36...processing table meetings
+2016-05-16 10:10:36...dropping table meetings
+2016-05-16 10:10:36...creating table meetings
+2016-05-16 10:10:36...creating Relationship Meta for Meeting
+2016-05-16 10:10:36...processing table tasks
+2016-05-16 10:10:36...dropping table tasks
+2016-05-16 10:10:36...creating table tasks
+2016-05-16 10:10:36...creating Relationship Meta for Task
+2016-05-16 10:10:36...processing table users
+2016-05-16 10:10:36...processing table users
+2016-05-16 10:10:36...processing table currencies
+2016-05-16 10:10:36...dropping table currencies
+2016-05-16 10:10:36...creating table currencies
+2016-05-16 10:10:36...creating Relationship Meta for Currency
+2016-05-16 10:10:36...processing table tracker
+2016-05-16 10:10:36...dropping table tracker
+2016-05-16 10:10:36...creating table tracker
+2016-05-16 10:10:36...creating Relationship Meta for Tracker
+2016-05-16 10:10:36...processing table import_maps
+2016-05-16 10:10:36...dropping table import_maps
+2016-05-16 10:10:36...creating table import_maps
+2016-05-16 10:10:36...creating Relationship Meta for ImportMap
+2016-05-16 10:10:36...processing table users_last_import
+2016-05-16 10:10:36...dropping table users_last_import
+2016-05-16 10:10:36...creating table users_last_import
+2016-05-16 10:10:36...creating Relationship Meta for UsersLastImport
+2016-05-16 10:10:36...processing table config
+2016-05-16 10:10:36...dropping table config
+2016-05-16 10:10:36...creating table config
+2016-05-16 10:10:36...creating Relationship Meta for Administration
+2016-05-16 10:10:36...processing table upgrade_history
+2016-05-16 10:10:36...dropping table upgrade_history
+2016-05-16 10:10:36...creating table upgrade_history
+2016-05-16 10:10:36...creating Relationship Meta for UpgradeHistory
+2016-05-16 10:10:36...processing table vcals
+2016-05-16 10:10:36...dropping table vcals
+2016-05-16 10:10:36...creating table vcals
+2016-05-16 10:10:36...creating Relationship Meta for vCal
+2016-05-16 10:10:36...processing table versions
+2016-05-16 10:10:36...dropping table versions
+2016-05-16 10:10:36...creating table versions
+2016-05-16 10:10:36...creating Relationship Meta for Version
+2016-05-16 10:10:36...processing table roles
+2016-05-16 10:10:36...dropping table roles
+2016-05-16 10:10:36...creating table roles
+2016-05-16 10:10:36...creating Relationship Meta for Role
+2016-05-16 10:10:36...processing table documents
+2016-05-16 10:10:36...dropping table documents
+2016-05-16 10:10:36...creating table documents
+2016-05-16 10:10:36...creating Relationship Meta for Document
+2016-05-16 10:10:36...processing table document_revisions
+2016-05-16 10:10:36...dropping table document_revisions
+2016-05-16 10:10:36...creating table document_revisions
+2016-05-16 10:10:36...creating Relationship Meta for DocumentRevision
+2016-05-16 10:10:36...processing table fields_meta_data
+2016-05-16 10:10:36...dropping table fields_meta_data
+2016-05-16 10:10:36...creating table fields_meta_data
+2016-05-16 10:10:36...creating Relationship Meta for FieldsMetaData
+2016-05-16 10:10:36...processing table inbound_email
+2016-05-16 10:10:36...dropping table inbound_email
+2016-05-16 10:10:37...creating table inbound_email
+2016-05-16 10:10:37...creating Relationship Meta for InboundEmail
+2016-05-16 10:10:37...processing table saved_search
+2016-05-16 10:10:37...dropping table saved_search
+2016-05-16 10:10:37...creating table saved_search
+2016-05-16 10:10:37...creating Relationship Meta for SavedSearch
+2016-05-16 10:10:37...processing table user_preferences
+2016-05-16 10:10:37...dropping table user_preferences
+2016-05-16 10:10:37...creating table user_preferences
+2016-05-16 10:10:37...creating Relationship Meta for UserPreference
+2016-05-16 10:10:37...processing table 
+2016-05-16 10:10:37...processing table email_addresses
+2016-05-16 10:10:37...dropping table email_addresses
+2016-05-16 10:10:37...creating table email_addresses
+2016-05-16 10:10:37...creating Relationship Meta for EmailAddress
+2016-05-16 10:10:37...processing table emails_text
+2016-05-16 10:10:37...dropping table emails_text
+2016-05-16 10:10:37...creating table emails_text
+2016-05-16 10:10:37...creating Relationship Meta for EmailText
+2016-05-16 10:10:37...processing table sugarfeed
+2016-05-16 10:10:37...dropping table sugarfeed
+2016-05-16 10:10:37...creating table sugarfeed
+2016-05-16 10:10:37...creating Relationship Meta for SugarFeed
+2016-05-16 10:10:37...processing table eapm
+2016-05-16 10:10:37...dropping table eapm
+2016-05-16 10:10:37...creating table eapm
+2016-05-16 10:10:37...creating Relationship Meta for EAPM
+2016-05-16 10:10:37...processing table oauth_consumer
+2016-05-16 10:10:37...dropping table oauth_consumer
+2016-05-16 10:10:37...creating table oauth_consumer
+2016-05-16 10:10:37...creating Relationship Meta for OAuthKey
+2016-05-16 10:10:37...processing table oauth_tokens
+2016-05-16 10:10:37...dropping table oauth_tokens
+2016-05-16 10:10:37...creating table oauth_tokens
+2016-05-16 10:10:37...creating Relationship Meta for OAuthToken
+2016-05-16 10:10:39...Begin creating Defaults
+2016-05-16 10:10:39...insert defaults into config table
+2016-05-16 10:10:39...Creating default users
+2016-05-16 10:10:39...Creating default scheduler jobs
+2016-05-16 10:10:39...Enable SugarFeeds
+2016-05-16 10:10:39...Enable InsideView Connector
+2016-05-16 10:10:39...Creating FTS logic hook
+2016-05-16 10:10:39...populating the db with seed data
+2016-05-16 10:10:39...Installation has completed *********
+2016-05-16 10:10:46...installerHook: Could not find custom/install/install_hooks.php
