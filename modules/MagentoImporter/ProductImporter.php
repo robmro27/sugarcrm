@@ -13,7 +13,7 @@ class ProductImporter extends ImporterAbstract {
      * Local path for copy of Magento products images
      */
     const LOCAL_IMAGES_DESTINATION = 'C:/xampp/htdocs/sugarcrm/upload/';
-    const IMAGES_DESTINATION = '/opt/home/users/rmroz/repos/sugarcrm/upload';
+    const IMAGES_DESTINATION = '/opt/home/users/rmroz/repos/sugarcrm/upload/';
     
     public function __construct() 
     {
