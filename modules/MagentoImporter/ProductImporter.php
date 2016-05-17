@@ -38,9 +38,8 @@ class ProductImporter extends ImporterAbstract {
         $magentoProductImages = $this->soapClient->catalogProductAttributeMediaList($this->sessionId, $magentoProduct->product_id);
 
         // copy image
-        
-        $username = 'polcode';
-        $password = 'polcode';
+        $username = self::POLCODE_BASE_AUTH_LOGIN;
+        $password = self::POLCODE_BASE_AUTH_PASSWORD;
         $context = stream_context_create(array(
             'http' => array(
                 'header'  => "Authorization: Basic " . base64_encode("$username:$password")
@@ -108,8 +107,8 @@ class ProductImporter extends ImporterAbstract {
      */
     private function getDestinationForImageFiles()
     {
-        if ( $_SERVER['REMOTE_ADDR'] = '127.0.0.1' )
-        {
+        $sapi_type = php_sapi_name();
+        if (substr($sapi_type, 0, 3) != 'cli' && $_SERVER['REMOTE_ADDR'] = '127.0.0.1' ) {
             return self::LOCAL_IMAGES_DESTINATION;
         }
         return self::IMAGES_DESTINATION;

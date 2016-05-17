@@ -8,6 +8,12 @@
 class ImporterAbstract {
     
     /**
+     * Base auth caredentials
+     */
+    const POLCODE_BASE_AUTH_LOGIN = 'polcode';
+    const POLCODE_BASE_AUTH_PASSWORD = 'polcode';
+    
+    /**
      * Defined in SugarCRM - "Magento Products" catalog
      */
     const CATALOG_ID = '14a12a1a-ac11-2d5f-37f4-5739a7e55001';
@@ -54,7 +60,7 @@ class ImporterAbstract {
     public function __construct() {
         
         if ( $this->soapClient == null || $this->sessionId == null ) {
-            $this->soapClient = new SoapClient($this->getApiUrl(), array('login' => 'polcode', 'password' => 'polcode'));
+            $this->soapClient = new SoapClient($this->getApiUrl(), array('login' => self::POLCODE_BASE_AUTH_LOGIN, 'password' => self::POLCODE_BASE_AUTH_PASSWORD));
             $this->sessionId = $this->soapClient->login(self::USERNAME, self::PASSWORD);
         }
         
