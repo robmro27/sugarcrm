@@ -83,19 +83,12 @@ class ImporterAbstract {
     
     
     /**
-     * Gets last successful execution of scheduler 
+     * Gets limit from where to import
      * @return string
      */
-    public function getLastSuccessExecution()
+    public function getImportTimeLimit()
     {
-        $db = DBManagerFactory::getInstance();
-
-        $query = 'select * from job_queue jq where jq.name = "Magento Importer" '
-               . 'and jq.`status` = "' . SchedulersJob::JOB_STATUS_DONE . '" and jq.resolution = "' . SchedulersJob::JOB_SUCCESS . '"';
-
-        $result = $db->query($query);
-        $row = $db->fetchByAssoc($result);
-        return ($row['execute_time'] !== null ) ? $row['execute_time'] : date('Y-m-d H:i:s', null) ;
+        return date('Y-m-d',(strtotime ( '-1 day' , strtotime ( date('Y-m-d')) ) )) ;
     }
     
     

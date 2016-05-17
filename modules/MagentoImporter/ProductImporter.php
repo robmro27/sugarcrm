@@ -90,7 +90,7 @@ class ProductImporter extends ImporterAbstract {
     {
 
         $params = array('complex_filter'=>
-            array(array('key'=>'created_at','value'=>array('key' =>'from','value' => $this->getLastSuccessExecution())))
+            array(array('key'=>'created_at','value'=>array('key' =>'from','value' => $this->getImportTimeLimit())))
         );
 
         $magentoProducts = $this->soapClient->catalogProductList($this->sessionId, $params);

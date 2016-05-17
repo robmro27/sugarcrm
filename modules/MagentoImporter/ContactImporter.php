@@ -24,7 +24,7 @@ class ContactImporter extends ImporterAbstract {
         // filters
         $params = array('complex_filter'=>
             array(
-                array('key'=>'created_at','value'=>array('key' =>'from','value' => $this->getLastSuccessExecution()))
+                array('key'=>'created_at','value'=>array('key' =>'from','value' => $this->getImportTimeLimit()))
             )
         );
 
