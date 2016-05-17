@@ -67,6 +67,7 @@ class ImporterAbstract {
      */
     private function getApiUrl()
     {
+        $sapi_type = php_sapi_name();
         if (substr($sapi_type, 0, 3) != 'cli' && $_SERVER['REMOTE_ADDR'] = '127.0.0.1' ) {
             return self::API_URL_LOCAL;
         }
