@@ -26,7 +26,7 @@ class ImporterAbstract {
      * Url's of Magento instance 
      */
     const API_URL_LOCAL = 'http://sugarcrm_magento.local/api/V2_soap/?wsdl=1';
-    const API_URL = 'http://magentosugarcrm.rmroz.sites.polcode.net/index.php/api/V2_soap/?wsdl=1';
+    const API_URL = 'http://polcode:polcode@magentosugarcrm.rmroz.sites.polcode.net/index.php/api/V2_soap/?wsdl=1';
     
     /**
      * Caredentials
