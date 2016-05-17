@@ -37,6 +37,9 @@ class ProductImporter extends ImporterAbstract {
         // magento product images
         $magentoProductImages = $this->soapClient->catalogProductAttributeMediaList($this->sessionId, $magentoProduct->product_id);
 
+        $productBean = new oqc_Product();
+        
+        
         if ( count( $magentoProductImages ) > 0 ) {
             
             // copy image
@@ -53,10 +56,13 @@ class ProductImporter extends ImporterAbstract {
             file_put_contents($dest, file_get_contents($src, false, $context)); 
 
             $this->resize(700, $dest, $dest);
+            
+            $productBean->image_unique_filename = basename($src);
+            $productBean->image_filename = basename($src);
+            $productBean->image_mime_type = $this->getMimetype($magentoProductImages[0]->file);
         }
        
         // add product
-        $productBean = new oqc_Product();
         $productBean->name = $magentoProductInfo->name;
         $productBean->date_entered = date('Y-m-d');
         $productBean->date_modified = date('Y-m-d');
@@ -70,9 +76,6 @@ class ProductImporter extends ImporterAbstract {
         $productBean->unit = 'pieces';
         $productBean->catalog_id = self::CATALOG_ID;
         $productBean->supplier_id = self::SUPPLIER_ID;
-        $productBean->image_unique_filename = basename($src);
-        $productBean->image_filename = basename($src);
-        $productBean->image_mime_type = $this->getMimetype($magentoProductImages[0]->file);
         $productBean->unique_identifier = $magentoProductInfo->sku;
         $productBean->svnumber = $magentoProductInfo->sku;
         $productBean->save();
