@@ -104,7 +104,7 @@ class ContactImporter extends ImporterAbstract {
                 $contactBean->email1 = $client->email;
                 $contactBean->save();
 
-            // 5. Add account relation 
+            // Add account relation 
             $focus = new Account();
             $focus->retrieve(self::SUPPLIER_ID);
             $focus->load_relationship('contacts');

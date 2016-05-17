@@ -67,7 +67,7 @@ class ImporterAbstract {
      */
     private function getApiUrl()
     {
-        if ( $_SERVER['REMOTE_ADDR'] = '127.0.0.1' ) {
+        if (substr($sapi_type, 0, 3) != 'cli' && $_SERVER['REMOTE_ADDR'] = '127.0.0.1' ) {
             return self::API_URL_LOCAL;
         }
         return self::API_URL;
