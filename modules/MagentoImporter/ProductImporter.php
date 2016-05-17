@@ -37,21 +37,23 @@ class ProductImporter extends ImporterAbstract {
         // magento product images
         $magentoProductImages = $this->soapClient->catalogProductAttributeMediaList($this->sessionId, $magentoProduct->product_id);
 
-        // copy image
-        $username = self::POLCODE_BASE_AUTH_LOGIN;
-        $password = self::POLCODE_BASE_AUTH_PASSWORD;
-        $context = stream_context_create(array(
-            'http' => array(
-                'header'  => "Authorization: Basic " . base64_encode("$username:$password")
-            )
-        ));
+        if ( count( $magentoProductImages ) > 0 ) {
+            
+            // copy image
+            $username = self::POLCODE_BASE_AUTH_LOGIN;
+            $password = self::POLCODE_BASE_AUTH_PASSWORD;
+            $context = stream_context_create(array(
+                'http' => array(
+                    'header'  => "Authorization: Basic " . base64_encode("$username:$password")
+                )
+            ));
 
-        
-        $src = $magentoProductImages[0]->url;
-        $dest = $this->getDestinationForImageFiles() . basename($src);
-        file_put_contents($dest, file_get_contents($src, false, $context)); 
-        
-        $this->resize(700, $dest, $dest);
+            $src = $magentoProductImages[0]->url;
+            $dest = $this->getDestinationForImageFiles() . basename($src);
+            file_put_contents($dest, file_get_contents($src, false, $context)); 
+
+            $this->resize(700, $dest, $dest);
+        }
        
         // add product
         $productBean = new oqc_Product();
