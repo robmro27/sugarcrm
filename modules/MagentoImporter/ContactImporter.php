@@ -3,18 +3,22 @@
 include_once 'ImporterAbstract.php';
 
 /**
- * Description of ContactImporter
+ * Import contacts
  *
  * @author rmroz
  */
 class ContactImporter extends ImporterAbstract {
    
+    
+    
     public function __construct() {
         parent::__construct();
     }
     
     
-    
+    /**
+     * Get list of contacts added from last succesfull import
+     */
     public function importContactList()
     {
         // filters
@@ -27,7 +31,7 @@ class ContactImporter extends ImporterAbstract {
         $resultClients = $this->soapClient->customerCustomerList($this->sessionId, $params);
 
         foreach ( $resultClients as  $client) {
-
+            
             // check if user exist 
             $found = false;
             $sea = new SugarEmailAddress();
@@ -44,12 +48,17 @@ class ContactImporter extends ImporterAbstract {
                 continue;
             }
             
+            // import contact
             $this->importContact($client);
             
         }
     }
     
     
+    /**
+     * 
+     * @param stdClass $client
+     */
     public function importContact( $client )
     {
         
