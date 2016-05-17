@@ -92,7 +92,7 @@ class ProductImporter extends ImporterAbstract {
         foreach ( $magentoProducts as $magentoProduct ) 
         {
             // if product already exists continue
-            $sugarProduct = $productBean->retrieve_by_string_fields(array('svnumber' => $magentoProduct->sku ));
+            $sugarProduct = $productBean->retrieve_by_string_fields(array('svnumber' => $magentoProduct->sku, 'deleted' => 0 ));
             if ($sugarProduct instanceof oqc_Product) {
                 continue;
             }

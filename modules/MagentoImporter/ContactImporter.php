@@ -37,7 +37,7 @@ class ContactImporter extends ImporterAbstract {
             $sea = new SugarEmailAddress();
             $results = $sea->getBeansByEmailAddress($client->email);
             foreach ($results as $aBean) {
-                if ($aBean instanceof Contact) {
+                if ($aBean instanceof Contact && $aBean->deleted == 0) {
                     $found = true;
                     break;
                 }
